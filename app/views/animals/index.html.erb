@@ -80,14 +80,23 @@
     <% end %>
   </tbody>
 </table>
+<br>
 <div class="row col-sm-12 text-center">
-  <h3><%= link_to 'New Animal', new_animal_path %></h3>
+  <button type="button"><%= link_to 'New Animal', new_animal_path %></button>
 </div>
+
 <hr>
+
+<div class="row col-sm-12 text-center">
+  <button type="button"><a href="http://localhost:3000/sightings">Register Animal Sighting</a></button>
+</div>
+
+<hr>
+
 <div class="row col-sm-12 text-center">
   <h2>Spotted an Endangered Animal?</h2>
   <h3>
-    contact <a href="http://www.iucnredlist.org/"> <%= image_tag "IUCN_Red_List.svg.png", :id=> "logo" %></a>
+    contact <a href="http://www.iucnredlist.org/" target="_blank"> <%= image_tag "IUCN_Red_List.svg.png", :id=> "logo" %></a>
   </h3>
 </div>
 
@@ -95,7 +104,7 @@
 <div class="row col-sm-12 text-center">
   <footer class="row col-sm-12 text-center">
     <%= image_tag "Forest_service.png", :id=> "logo" %>
-    copyright &reg;	Remi and Adam
+    copyright &reg;	Remy and Adam
     <%= image_tag "INaturalist_logo.png", :id=> "logo" %>
   </footer>
 </div>
