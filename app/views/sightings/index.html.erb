@@ -46,6 +46,20 @@
 <br>
 
 <div class="row col-sm-12 text-center">
+  <form action="/sightings" method="get">
+    <label for="start_date">Start date</label>
+    <input id="start_date" name="start_date" type="date">
+    <label for="end_date">End date</label>
+    <input id="end_date" name="end_date" type="date">
+    <div class="field">
+    <%= select_tag("region", options_for_select([['north', 'north'],['south', 'south'],['east', 'east'],['west', 'west']])) %>
+    </div>
+    <button>Run report</button>
+  </form>
+</div>
+<hr>
+
+<div class="row col-sm-12 text-center">
 <button type="button"><%= link_to 'New Sighting', new_sighting_path %></button>
 <hr>
 <button type="button"><a href="http://localhost:3000/animals">Home</a></button>
