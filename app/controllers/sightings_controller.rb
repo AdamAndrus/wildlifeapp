@@ -5,6 +5,7 @@ class SightingsController < ApplicationController
   # GET /sightings.json
 
   def index
+    # if start date is not empty, then find the sighting date between start date and end date + find the region and render it on the index.html.erb page...else find all sighting dates
     if !params[:start_date].nil?
       @sightings = Sighting.where(date:params[:start_date]..params[:end_date], region: params[:region])
       render('sightings/index.html.erb')

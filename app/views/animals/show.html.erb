@@ -11,25 +11,28 @@
 </p>
 
 <p>
-  <strong>Kingdom:</strong>
-  <%= @animal.kingdom %>
-</p>
-
-<p>
   <strong>Location:</strong>
   <%= @animal.location %>
 </p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @animal.number %>
-</p>
-
-<p>
+<p id="sighting_list">
   <ul>
     <%= render partial: "sighting", collection: @animal.sightings %>
   </ul>
 </p>
+
+<p>
+  <input type="date" name="sighting[date]" placeholder="Date" id="sighting_date"/>
+  <input type="time" name="sighting[time]" placeholder="Time"id="sighting_time"/>
+  <input type="number" name="sighting[latitude]" placeholder="Lat" id="sighting_latitude"/>
+  <input type="number" name="sighting[longitude]" placeholder="Long" id="sighting_longitude"/>
+  <input type="hidden" name="sighting[animal_id]" id="animal_id" value="<%=@animal.id%>"/>
+  <div class="field">
+  <%= select(:sighting, :region, options_for_select([['north', 'north'],['south', 'south'],['east', 'east'],['west', 'west']])) %>
+  </div>
+  <button id="add_new_sighting_button">Add new Sighting</button>
+</p>
+
 
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |

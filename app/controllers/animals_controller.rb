@@ -5,13 +5,14 @@ class AnimalsController < ApplicationController
   # GET /animals.json
   def index
     @animals = Animal.all
+    @animal = Animal.first
   end
 
   # GET /animals/1
   # GET /animals/1.json
   def show
   end
-  
+
 
   # GET /animals/new
   def new
@@ -55,6 +56,7 @@ class AnimalsController < ApplicationController
   # DELETE /animals/1
   # DELETE /animals/1.json
   def destroy
+    @animal.sightings.destroy_all
     @animal.destroy
     respond_to do |format|
       format.html { redirect_to animals_url, notice: 'Animal was successfully destroyed.' }
@@ -70,6 +72,6 @@ class AnimalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def animal_params
-      params.require(:animal).permit(:common_name, :latin_name, :kingdom, :location, :number)
+      params.require(:animal).permit(:common_name, :latin_name, :location)
     end
 end
