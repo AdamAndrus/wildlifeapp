@@ -38,6 +38,7 @@ function add_to_animal_list(data) {
     "<td>"+data.location+"</td>"+
     '<td><a href="animals/' + data.id + '">Show</a></td>'+
     '<td><a href="animals/' + data.id + '/edit">Edit</a></td>'+
+    '<td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/animals/'+data.id+'">Destroy</a></td>'+
     "<tr>"
     );
 }
