@@ -12,7 +12,7 @@ $("document").ready(function() {
           "longitude": $("#sighting_longitude").val(),
           "region": $("#sighting_region").val(),
           "animal_id": $("#animal_id").val()
-          )
+
         }
       }
 
