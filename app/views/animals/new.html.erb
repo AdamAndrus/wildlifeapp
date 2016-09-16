@@ -1,5 +1,8 @@
-<h1>New Animal</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', animals_path %>
+<div style="display:flex;justify-content:center;align-items:center;">
+  <div id="new_animal" class="text-center center-block">
+    <h1>New Animal</h1>
+    <%= render 'form' %>
+    <br>
+    <button> <%= link_to 'Back', animals_path %> </button>
+  </div>
+</div>

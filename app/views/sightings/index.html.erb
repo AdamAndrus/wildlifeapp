@@ -31,7 +31,7 @@
     <% @sightings.each do |sighting| %>
       <tr>
         <td><%= sighting.date %></td>
-        <td><%= sighting.time %></td>
+        <td><%= sighting.time.strftime("%H:%M") %></td>
         <td><%= sighting.latitude %></td>
         <td><%= sighting.longitude %></td>
         <td><%= sighting.region %></td>
@@ -52,7 +52,9 @@
     <label for="end_date">End date</label>
     <input id="end_date" name="end_date" type="date">
     <div class="field">
-    <%= select_tag("region", options_for_select([['north', 'north'],['south', 'south'],['east', 'east'],['west', 'west']])) %>
+      <br>
+      <label for="region">Region</label>
+      <%= select_tag("region", options_for_select([['north', 'north'],['south', 'south'],['east', 'east'],['west', 'west']])) %>
     </div>
     <br>
     <button>Run report</button>
@@ -67,5 +69,5 @@
 <div id="calendar"></div>
 
 <hr>
-<button type="button"><a href="http://localhost:3000/animals">Home</a></button>
+<button type="button"><a href="http://localhost:3000/animals">Return To Home Page</a></button>
 </div>

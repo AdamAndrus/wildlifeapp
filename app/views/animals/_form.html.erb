@@ -1,6 +1,6 @@
 <%= form_for(@animal) do |f| %>
   <% if @animal.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation text-center">
       <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
 
       <ul>
