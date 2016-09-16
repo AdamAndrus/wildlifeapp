@@ -54,12 +54,14 @@
     <div class="field">
     <%= select_tag("region", options_for_select([['north', 'north'],['south', 'south'],['east', 'east'],['west', 'west']])) %>
     </div>
+    <br>
     <button>Run report</button>
   </form>
 </div>
 <hr>
 
 <div class="row col-sm-12 text-center">
+  <br>
 <button type="button"><%= link_to 'New Sighting', new_sighting_path %></button>
 
 <div id="calendar"></div>
